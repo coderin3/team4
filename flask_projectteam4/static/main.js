@@ -1,6 +1,6 @@
 // main.js — Ewha Market 공통 스크립트
 
-// 🌙 다크모드
+//  다크모드
 function applyTheme(theme) {
   document.body.setAttribute("data-theme", theme);
   const toggleBtn = document.getElementById("darkToggle");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btn) btn.addEventListener("click", toggleTheme);
 });
 
-// 🔄 폼 제출 처리 (Flask로 전송되게)
+//  폼 제출 처리 (Flask로 전송되게)
 document.addEventListener("submit", e => {
   const form = e.target;
   // 상품 등록 / 리뷰 작성은 Flask로 전송해야 하므로 기본 동작 유지
@@ -35,7 +35,7 @@ document.addEventListener("submit", e => {
   }
 });
 
-// 💬 버튼 클릭 애니메이션
+//  버튼 클릭 애니메이션
 document.addEventListener("click", e => {
   if (e.target.classList.contains("btn")) {
     e.target.style.transform = "scale(0.96)";

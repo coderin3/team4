@@ -8,7 +8,7 @@ USER_ID = "ewha"
 USER_PW = "1234"
 
 # --------------------------------
-# ✅ 초기 데이터
+# 초기 데이터
 # --------------------------------
 products = []
 reviews = [
@@ -38,7 +38,7 @@ def index():
     return render_template('index.html', logged_in=session.get("logged_in", False))
 
 # --------------------------------
-# ✅ 상품 등록
+# 상품 등록
 # --------------------------------
 @app.route('/register', methods=['GET', 'POST'])
 def product_register():
@@ -76,7 +76,7 @@ def product_register():
         return redirect(url_for('product_list'))
 
     return render_template('product_register.html', logged_in=session.get("logged_in", False))
-# ✅ 상품 상세 페이지 각각 연결
+#  상품 상세 페이지 각각 연결
 @app.route('/detail/pen')
 def detail_pen():
     return render_template('product_detail_pen.html', logged_in=session.get("logged_in", False))
@@ -93,12 +93,12 @@ def detail_buds():
 def detail_jumper():
     return render_template('product_detail_jumper.html', logged_in=session.get("logged_in", False))
 
-# ✅ 상품 목록
+#  상품 목록
 @app.route('/list')
 def product_list():
     return render_template('product_list.html', products=products, logged_in=session.get("logged_in", False))
 
-# ✅ 상품 삭제
+#  상품 삭제
 @app.route('/delete/<int:index>', methods=['POST'])
 def delete_product(index):
     if 0 <= index < len(products):
@@ -109,7 +109,7 @@ def delete_product(index):
         flash("해당 상품을 찾을 수 없습니다.")
     return redirect(url_for('product_list'))
 
-# ✅ 상품 상세 보기 (고정 상품 + 등록 상품)
+#  상품 상세 보기 (고정 상품 + 등록 상품)
 @app.route('/detail/<item>')
 def product_detail(item):
     # 고정 상품
@@ -153,7 +153,7 @@ def product_detail(item):
     return render_template('product_detail.html', product=product, logged_in=session.get("logged_in", False))
 
 # --------------------------------
-# ✅ 리뷰 기능
+# 리뷰 기능
 # --------------------------------
 @app.route('/review')
 @app.route('/review/write')
