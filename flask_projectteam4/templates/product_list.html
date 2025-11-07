@@ -11,7 +11,7 @@
 
   <div class="container fade">
 
-    <!-- 상단 제목 + 버튼 같은 줄 -->
+   
     <div class="page-head">
       <h2>상품 조회</h2>
       <div class="page-actions">
@@ -20,7 +20,7 @@
     </div>
 
     <section class="grid">
-      <!-- 🔸 기본 상품 -->
+      
       <article class="card prod" onclick="location.href='/detail/pen'">
         <img src="{{ url_for('static', filename='image/이화그린5색펜세트.jpg') }}" alt="이화그린5색펜세트">
         <div class="name">이화상점 이화그린5색펜세트</div>
@@ -45,7 +45,7 @@
         <div class="price">₩50,000</div>
       </article>
 
-      <!-- 🔹 사용자가 등록한 상품 -->
+      <!--사용자가 등록한 상품 -->
       {% if products and products|length > 0 %}
         {% for p in products %}
         <article class="card prod">
